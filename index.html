@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For You</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: #ffe6f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .fade {
+    animation: fadeIn 1.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  /* Envelope Styling */
+  .envelope {
+    width: 260px;
+    height: 170px;
+    background: #ffcce6;
+    position: relative;
+    margin: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+    overflow: hidden;
+  }
+
+  .envelope:hover {
+    transform: scale(1.07);
+  }
+
+  .top-fold {
+    width: 100%;
+    height: 50%;
+    background: #ffb3d9;
+    position: absolute;
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+
+  .bottom-fold {
+    width: 100%;
+    height: 60%;
+    background: #ffcce6;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .seal {
+    width: 60px;
+    height: 60px;
+    background: #ff66b3;
+    border-radius: 50%;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  }
+
+  /* Page Content */
+  .page {
+    display: none;
+    padding: 25px;
+    width: 85%;
+    max-width: 750px;
+    margin: auto;
+    background: #fff0f6;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    line-height: 1.7;
+  }
+
+  .page p {
+    font-size: 18px;
+  }
+
+  button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 12px;
+    background: #ff66b3;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #e0559e;
+  }
+
+  #finalPage {
+    text-align: center;
+    font-size: 26px;
+  }
+
+  .heart {
+    font-size: 70px;
+    margin-top: 25px;
+    animation: heartbeat 1.7s infinite;
+  }
+
+  @keyframes heartbeat {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.25); }
+    50% { transform: scale(1); }
+    70% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: ENVELOPE -->
+<div class="container fade" id="startPage">
+  <div class="envelope" onclick="openLetter()">
+    <div class="top-fold"></div>
+    <div class="bottom-fold"></div>
+    <div class="seal">❤️</div>
+  </div>
+  <p style="margin-top:20px; font-size:22px; color:#cc2e68;">Click the envelope, my love…</p>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page fade" id="page2">
+<p>From the moment I met you, my life changed in ways I never expected. This letter is a piece of that story. You opened the envelope… now its time for me to open my heart to you.<br><br>
+I never thought someone could touch my heart so gently, so deeply, so unexpectedly, yet here am I living my dreams with you. Every message and every smile we share even from far away becomes one of my favorite memories. When I think of love I think of you. But sometimes I ask myself what love really is. It’s hard to explain because love is something we feel in our soul so it is hard to describe. I will try to explain it…<br><br>
+Love is more than a feeling love is more than a sense. I would say love is state of mind but is the love real if we say we love with our mind. Does that mean we love with our heart? I highly doubt it because hearth can stop working but I love you forever. I love you in this life and in the next one, in every life in every universe. Then how we love. If you ask me when you truly love someone you love them with your soul. Our body will die but soul with live forever with God. My soul feels connected to yours.</p>
+<button onclick="goPage(3)">Next →</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page fade" id="page3">
+<p>Some kind of connection words can’t explain. If we can’t describe it with words how we know that connection actually exists, how do we know love is there. We can say it with our mouth but mouth can lie. Then how, why is it so hard. Answer is simple we don’t have to listen we need to look. Eyes. Eyes never lie. You can see love is someone eyes. That little spark in eyes of your loved ones is more expensive than anything this world can give you. That’s why I always get lost in your eyes, my love, they carry something words can’t describe. I get lost in the love.<br><br>
+But still, what is that love I always talk about? Love is when someone decides to stay with you even when they don’t have to. I will stay with you through everything, trough every up and every down. There lies the beaty of love… my dream is simple, yet very complicated and not easy to achieve. But with God I know we can do it. My dream is to make you happy, see you smile everyday live your life carefree, to start my day with you and end it the same way. To be your safe place, your best friend and your love. To hug, kiss and support you. To give you all love you deserve.</p>
+<button onclick="goPage(4)">Next →</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page fade" id="page4">
+<p>Selin, I am so grateful God brought us together. I know our journey will be hard, but I believe in Him and I believe in us. Together we will overcome every problem we have. And always remember you are never going to be alone trough anything as long as I breath oxygen and my heart beats. You are an amazing person with amazing heart. Most beautiful and smartest girl in the world. I wrote this letter so you can read it always you want and I hope it will make you smile, because your smile is most precious thing to me, and make your eyes shine. I see our future in your eyes…<br><br>
+I would like to end this letter with one quote from Dostoyevsky: “The mystery of human existence lies not in just staying alive, but in finding someone to live for”, and I found my someone, I found you. Do you see the stars on the sky Selin? Please count them. There are billions and trillions of them. That’s how many years I want to spend with you, how many times I want to kiss you while we look at them, how many times I want to hug you, hold your hand, and tell you how much I love you.</p>
+<button onclick="goPage(5)">Next →</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page fade" id="page5">
+<p>I was thinking I don’t want perfect life I just want life with you in it. But to be honest if you are in my life, it will be perfect. Maybe I am delusional, but if you ask me believing hard in something that doesn’t exist yet, we create it. Seni çok seviyorum Selin.</p>
+<button onclick="goPage(6)">Next →</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div class="page fade" id="page6">
+  <p>İ choose you askim,<br>today, tomorrow and forever.</p>
+  <div class="heart">❤️</div>
+</div>
+
+<script>
+function openLetter(){
+  document.getElementById('startPage').style.display='none';
+  document.getElementById('page2').style.display='block';
+}
+
+function goPage(num){
+  const pages = ['page2','page3','page4','page5','page6'];
+  pages.forEach(p => document.getElementById(p).style.display='none');
+  document.getElementById('page' + num).style.display='block';
+}
+</script>
+
+</body>
+</html>
